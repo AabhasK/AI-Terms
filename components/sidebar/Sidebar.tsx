@@ -51,6 +51,16 @@ export default function Sidebar() {
         text-left flex flex-col items-start
       "
     >
+      <div className="fixed top-4 left-4 z-10">
+        <a href="/">
+          <img
+            src="/me.jpg"
+            alt="Profile photo"
+            className="pointer-events-none w-10 h-10 rounded-full grayscale hover:grayscale-0 transition"
+          />
+        </a>
+      </div>
+
       {/* Smaller heading */}
       <h2 className="text-lg font-semibold mb-5 text-[#ededed] text-left">
         AI Glossary
