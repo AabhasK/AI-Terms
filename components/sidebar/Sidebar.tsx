@@ -52,7 +52,7 @@ export default function Sidebar() {
       "
     >
       <div className="fixed top-4 left-4 z-10">
-        <a href="/">
+        <a href="https://github.com/Aabhaskhandelwal">
           <img
             src="/me.jpg"
             alt="Profile photo"
