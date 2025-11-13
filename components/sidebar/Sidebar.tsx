@@ -24,12 +24,10 @@ const items = [
   "LLM",
 ];
 
-// ---- SCROLL + UPDATE URL ---- //
 function handleById(id: string) {
   const el = document.getElementById(id);
   if (!el) return;
 
-  // update URL without reload
   window.history.replaceState(null, "", `#${id}`);
 
   const targetY = el.getBoundingClientRect().top + window.scrollY - 20;
@@ -47,14 +45,19 @@ export default function Sidebar() {
       className="
         fixed top-0 left-0
         h-screen w-[30vw]
-        px-10 pt-14
+        px-30 pt-30
         overflow-y-auto
-        hide-at-1090
+        hidden lg:block
+        text-left flex flex-col items-start
       "
     >
-      <h2 className="text-xl font-semibold mb-6 text-[#ededed]">AI Glossary</h2>
+      {/* Smaller heading */}
+      <h2 className="text-lg font-semibold mb-5 text-[#ededed] text-left">
+        AI Glossary
+      </h2>
 
-      <div className="flex flex-col gap-[2px]">
+      {/* Smaller list */}
+      <div className="flex flex-col gap-[2px] text-left w-full">
         {items.map((label) => {
           const id = label.replace(/\s+/g, "-").toLowerCase();
 
@@ -62,15 +65,20 @@ export default function Sidebar() {
             <button
               key={label}
               onClick={() => handleById(id)}
-              className="text-[#ededed] hover:text-[#b5b5b5]"
+              className="
+                text-[#ededed]
+                hover:text-[#b5b5b5]
+                text-xs
+                text-left
+                w-full
+              "
               style={{
-                textAlign: "left",
                 background: "transparent",
                 border: "none",
                 cursor: "pointer",
-                fontSize: "0.9rem",
-                lineHeight: "1.2rem",
-                padding: "2px 0",
+                fontSize: "0.75rem", // smaller
+                lineHeight: "1.05rem", // tighter
+                padding: "1px 0", // smaller spacing
                 transition: "color 0.15s ease",
               }}
             >
