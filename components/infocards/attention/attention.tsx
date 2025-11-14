@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Parameter() {
+export default function Attention() {
   return (
     <div
       className="
@@ -25,15 +25,17 @@ export default function Parameter() {
         transition-all duration-300
       "
     >
-      <section id="parameter" className="mb-14">
+      <section id="attention" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Parameter
+          Attention
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          Values the model learns during training that determine how strongly
-          different parts of the network connect and respond. Together, they
-          define how the model understands and generates information.
+          A mechanism inside Transformers that decides which words to focus on
+          when processing a sentence. Each word looks at others and assigns more
+          weight to the ones that matter most for understanding.
+          <br />
+          Ex: attention for 'Mat'
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -49,22 +51,18 @@ export default function Parameter() {
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
           "
         >
-          <video
-            src="/parameter.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            width={600}
-            height={400}
+          <img
+            src="/attention.png"
             className="rounded-lg"
-          ></video>
+            height={400}
+            width={600}
+            alt=""
+          />
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Each dot represents a learned value that shapes how the model
-          understands data. More parameters typically mean a smarter, more
-          flexible model (not always true).
+          Helps the model decide which words to focus on for meaning. So it
+          doesn’t treat all words equally but picks out what really matters.
         </p>
       </section>
     </div>

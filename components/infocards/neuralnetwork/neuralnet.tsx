@@ -48,13 +48,16 @@ export default function Neural() {
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
           "
         >
-          <img
-            src="/neural.png"
-            className="rounded-lg"
-            height={400}
+          <video
+            src="/neuralvid.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
             width={600}
-            alt=""
-          />
+            height={400}
+            className="rounded-lg"
+          ></video>
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">

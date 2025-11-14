@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Parameter() {
+export default function Pretrain() {
   return (
     <div
       className="
@@ -25,15 +25,14 @@ export default function Parameter() {
         transition-all duration-300
       "
     >
-      <section id="parameter" className="mb-14">
+      <section id="attention" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Parameter
+          Attention
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          Values the model learns during training that determine how strongly
-          different parts of the network connect and respond. Together, they
-          define how the model understands and generates information.
+          The first learning stage where a model trains on vast text data to
+          learn patterns, context, and general knowledge.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -50,7 +49,7 @@ export default function Parameter() {
           "
         >
           <video
-            src="/parameter.mp4"
+            src="/pretrain.mp4"
             autoPlay
             muted
             loop
@@ -62,9 +61,8 @@ export default function Parameter() {
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Each dot represents a learned value that shapes how the model
-          understands data. More parameters typically mean a smarter, more
-          flexible model (not always true).
+          Helps the model adapt more quickly and effectively to specific tasks
+          later without starting from scratch.
         </p>
       </section>
     </div>
