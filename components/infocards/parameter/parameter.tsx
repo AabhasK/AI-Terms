@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Neural() {
+export default function Parameter() {
   return (
     <div
       className="
@@ -25,14 +25,15 @@ export default function Neural() {
         transition-all duration-300
       "
     >
-      <section id="neural-network" className="mb-14">
+      <section id="parameter" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Neural Network
+          Parameter
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          An internal map where the model organizes what it has learned. Each
-          point represents a concept, and similar ideas group close together.
+          Values the model learns during training that determine how strongly
+          different parts of the network connect and respond. Together, they
+          define how the model understands and generates information.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -49,7 +50,7 @@ export default function Neural() {
           "
         >
           <img
-            src="/neural.png"
+            src="/parameter.png"
             className="rounded-lg"
             height={400}
             width={600}
@@ -58,9 +59,9 @@ export default function Neural() {
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Each layer transforms the information a bit, finding patterns and
-          meaning. So by the end, the network can turn a question into the right
-          answer.
+          Each dot represents a learned value that shapes how the model
+          understands data. More parameters typically mean a smarter, more
+          flexible model (not always true).
         </p>
       </section>
     </div>

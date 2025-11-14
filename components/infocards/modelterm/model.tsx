@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Neural() {
+export default function Model() {
   return (
     <div
       className="
@@ -25,14 +25,12 @@ export default function Neural() {
         transition-all duration-300
       "
     >
-      <section id="neural-network" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Neural Network
-        </h2>
+      <section id="model" className="mb-14">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">Model</h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          An internal map where the model organizes what it has learned. Each
-          point represents a concept, and similar ideas group close together.
+          A system that has learned from data and can now use that knowledge to
+          predict, generate, or understand new information.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -49,7 +47,7 @@ export default function Neural() {
           "
         >
           <img
-            src="/neural.png"
+            src="/model.png"
             className="rounded-lg"
             height={400}
             width={600}
@@ -58,9 +56,8 @@ export default function Neural() {
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Each layer transforms the information a bit, finding patterns and
-          meaning. So by the end, the network can turn a question into the right
-          answer.
+          Many of OpenAI's models. ChatGPT 5 was trained on around 52.5 Trillion
+          parameters(That's a lot of data!!)
         </p>
       </section>
     </div>

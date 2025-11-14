@@ -2,9 +2,12 @@
 import Contextwindow from "@/components/infocards/contextwindow/contextwindow";
 import Embedding from "@/components/infocards/embedding/embedding";
 import Latent from "@/components/infocards/latentspace/latentspace";
+import Model from "@/components/infocards/modelterm/model";
 import Neural from "@/components/infocards/neuralnetwork/neuralnet";
+import Parameter from "@/components/infocards/parameter/parameter";
 import Token from "@/components/infocards/token/token";
 import Tokenization from "@/components/infocards/tokenization/tokenization";
+import Transformer from "@/components/infocards/transformer/transformer";
 import Sidebar from "@/components/sidebar/Sidebar";
 import React from "react";
 
@@ -18,6 +21,9 @@ const page = () => {
       <Contextwindow />
       <Latent />
       <Neural />
+      <Parameter />
+      <Model />
+      <Transformer />
     </div>
   );
 };
