@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Reinforcement() {
+export default function ChainofThought() {
   return (
     <div
       className="
@@ -25,15 +25,14 @@ export default function Reinforcement() {
         transition-all duration-300
       "
     >
-      <section id="reinforcement-learning" className="mb-14">
+      <section id="chain-of-thought" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Reinforcement Learning
+          Chain of Thought
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          A training method where the model improves through feedback. It tries
-          actions, receives rewards or penalties from humans or another model,
-          and learns to make better decisions over time.
+          Step-by-step reasoning the model writes to reach an answer. It helps
+          the model break complex problems into smaller, more manageable steps.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -49,21 +48,17 @@ export default function Reinforcement() {
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
           "
         >
-          <video
-            src="/reinforcement.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            width={400}
-            height={200}
+          <img
+            src="/chainofthought.png"
             className="rounded-lg"
-          ></video>
+            height={400}
+            width={600}
+            alt=""
+          />
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Improves the model through trial, error, and feedback until it gets
-          better results.
+          Shows how the model thinks through a problem before answering.
         </p>
       </section>
     </div>

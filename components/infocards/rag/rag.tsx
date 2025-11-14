@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Reinforcement() {
+export default function RAG() {
   return (
     <div
       className="
@@ -25,15 +25,15 @@ export default function Reinforcement() {
         transition-all duration-300
       "
     >
-      <section id="reinforcement-learning" className="mb-14">
+      <section id="rag" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Reinforcement Learning
+          RAG(Retrieval Augmented Generation)
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          A training method where the model improves through feedback. It tries
-          actions, receives rewards or penalties from humans or another model,
-          and learns to make better decisions over time.
+          A method that lets a model look up information before answering. It
+          retrieves relevant data from external sources, then uses that context
+          to write a more complete answer.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -50,20 +50,20 @@ export default function Reinforcement() {
           "
         >
           <video
-            src="/reinforcement.mp4"
+            src="/RAG.mp4"
             autoPlay
             muted
             loop
             playsInline
-            width={400}
-            height={200}
+            width={600}
+            height={400}
             className="rounded-lg"
           ></video>
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Improves the model through trial, error, and feedback until it gets
-          better results.
+          When you use an AI that can search the web, it lets the model pull
+          fresh info before it writes an answer.
         </p>
       </section>
     </div>

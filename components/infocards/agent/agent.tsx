@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Reinforcement() {
+export default function Agent() {
   return (
     <div
       className="
@@ -25,15 +25,12 @@ export default function Reinforcement() {
         transition-all duration-300
       "
     >
-      <section id="reinforcement-learning" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Reinforcement Learning
-        </h2>
+      <section id="agent" className="mb-14">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">Agent</h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          A training method where the model improves through feedback. It tries
-          actions, receives rewards or penalties from humans or another model,
-          and learns to make better decisions over time.
+          Agents are autonomous systems that use tools and feedback loops to
+          accomplish tasks.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -50,20 +47,19 @@ export default function Reinforcement() {
           "
         >
           <video
-            src="/reinforcement.mp4"
+            src="/Agent.mp4"
             autoPlay
             muted
             loop
             playsInline
-            width={400}
-            height={200}
+            width={600}
+            height={400}
             className="rounded-lg"
           ></video>
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Improves the model through trial, error, and feedback until it gets
-          better results.
+          They choose their own actions to get things done.
         </p>
       </section>
     </div>
