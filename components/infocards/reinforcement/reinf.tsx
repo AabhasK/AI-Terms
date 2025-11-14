@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Pretrain() {
+export default function Reinforcement() {
   return (
     <div
       className="
@@ -25,14 +25,15 @@ export default function Pretrain() {
         transition-all duration-300
       "
     >
-      <section id="pre-training" className="mb-14">
+      <section id="reinforcement" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Pre Training
+          Reinforcement Learning
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          The first learning stage where a model trains on vast text data to
-          learn patterns, context, and general knowledge.
+          A training method where the model improves through feedback. It tries
+          actions, receives rewards or penalties from humans or another model,
+          and learns to make better decisions over time.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -49,20 +50,20 @@ export default function Pretrain() {
           "
         >
           <video
-            src="/pretrain.mp4"
+            src="/reinforcement.mp4"
             autoPlay
             muted
             loop
             playsInline
-            width={600}
-            height={400}
+            width={400}
+            height={200}
             className="rounded-lg"
           ></video>
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Helps the model adapt more quickly and effectively to specific tasks
-          later without starting from scratch.
+          Improves the model through trial, error, and feedback until it gets
+          better results.
         </p>
       </section>
     </div>

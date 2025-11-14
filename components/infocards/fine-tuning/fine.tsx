@@ -29,9 +29,9 @@ export default function FineTune() {
         transition-all duration-300
       "
     >
-      <section id="parameter" className="mb-14">
+      <section id="fine-tuning" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Parameter
+          Fine Tuning
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">

@@ -7,6 +7,7 @@ import Latent from "@/components/infocards/latentspace/latentspace";
 import Model from "@/components/infocards/modelterm/model";
 import Neural from "@/components/infocards/neuralnetwork/neuralnet";
 import Parameter from "@/components/infocards/parameter/parameter";
+import Reinforcement from "@/components/infocards/reinforcement/reinf";
 import Token from "@/components/infocards/token/token";
 import Tokenization from "@/components/infocards/tokenization/tokenization";
 import Transformer from "@/components/infocards/transformer/transformer";
@@ -30,6 +31,7 @@ const page = () => {
       <Attention />
       <Pretrain />
       <FineTune />
+      <Reinforcement />
     </div>
   );
 };
