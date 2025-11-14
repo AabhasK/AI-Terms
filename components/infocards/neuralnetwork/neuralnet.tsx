@@ -3,9 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Latent() {
-  const words = ["I", "will", "be", "studying", "today", "."];
-
+export default function Neural() {
   return (
     <div
       className="
@@ -27,14 +25,15 @@ export default function Latent() {
         transition-all duration-300
       "
     >
-      <section id="latent-space" className="mb-14">
+      <section id="neural-network" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Latent Space
+          Neural Network
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          An internal map where the model organizes what it has learned. Each
-          point represents a concept, and similar ideas group close together.
+          A network of connected layers that learn from examples. Each layer
+          refines the data, and together they learn patterns used to recognize
+          images, understand language, or process sounds.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -51,17 +50,18 @@ export default function Latent() {
           "
         >
           <img
-            src="/finallatent.png"
+            src="/neural.png"
             className="rounded-lg"
-            height={200}
-            width={400}
+            height={400}
+            width={600}
             alt=""
           />
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Each dot is an embedding, placed near others with similar meaning.
-          It’s how the model organizes concepts to relate them efficiently.
+          Each layer transforms the information a bit, finding patterns and
+          meaning. So by the end, the network can turn a question into the right
+          answer.
         </p>
       </section>
     </div>
