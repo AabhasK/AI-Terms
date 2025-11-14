@@ -94,7 +94,7 @@ export default function Contextwindow() {
         </div>
 
         {/* FOOTER TEXT */}
-        <p className="text-center text-[#b5b5b5] text-sm mt-6 leading-relaxed max-w-xl mx-auto">
+        <p className="text-center text-[#b5b5b5] text-xs mt-6 leading-relaxed max-w-xl mx-auto">
           The model can process a limited number of tokens at once. It varies a
           lot depending on the model.
         </p>
