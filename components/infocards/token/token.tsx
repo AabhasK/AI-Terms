@@ -8,7 +8,7 @@ export default function Token() {
         pt-30
 
         /* DESKTOP (unchanged) */
-        lg:pl-[35vw] lg:pr-45
+        lg:pl-[35vw] lg:pr-60 lg:mt-10
 
         /* TABLETS (768px–1023px) */
         md:pl-8 md:pr-8
@@ -36,8 +36,8 @@ export default function Token() {
           <h2 className="text-base font-semibold text-[#ededed] mb-2">Token</h2>
 
           <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-            The smallest unit of text a model processes. It can be a word, part
-            of a word, or even a symbol.
+            The process of breaking text into small units (tokens) a model can
+            understand. Each token can be a word, subword, or character.
           </p>
 
           <div
@@ -70,8 +70,8 @@ export default function Token() {
           </div>
 
           <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-            Text is split into small units the model can read. <br />
-            Each token is linked to a number—its own ID.
+            When you send a text to a model,
+            <br /> it’s the very first step before anything else happens.
           </p>
         </section>
       </div>
