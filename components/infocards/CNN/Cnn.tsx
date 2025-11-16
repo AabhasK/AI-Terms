@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Reinforcement() {
+export default function CNN() {
   return (
     <div
       className="
@@ -25,15 +25,15 @@ export default function Reinforcement() {
         transition-all duration-300
       "
     >
-      <section id="reinforcement" className="mb-14">
+      <section id="cnn" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Reinforcement Learning
+          CNN(Convolutional Neural Network)
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          A training method where the model improves through feedback. It tries
-          actions, receives rewards or penalties from humans or another model,
-          and learns to make better decisions over time.
+          A CNN uses convolutional filters to automatically detect patterns like
+          edges, textures, and shapes in images, allowing it to learn visual
+          features layer by layer for classification or recognition tasks.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -50,20 +50,19 @@ export default function Reinforcement() {
           "
         >
           <video
-            src="/reinforcement.mp4"
+            src="/CNN.mp4"
             autoPlay
             muted
             loop
             playsInline
-            width={400}
-            height={200}
+            width={600}
+            height={400}
             className="rounded-lg"
           ></video>
         </div>
-
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Improves the model through trial, error, and feedback until it gets
-          better results.
+          how an image passes through convolutional filters that extract
+          features at different levels of abstraction.
         </p>
       </section>
     </div>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Reinforcement() {
+export default function GPT() {
   return (
     <div
       className="
@@ -25,15 +25,17 @@ export default function Reinforcement() {
         transition-all duration-300
       "
     >
-      <section id="reinforcement" className="mb-14">
+      <section id="gpt" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Reinforcement Learning
+          GPT(Generative Pre-trained Transformer)
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          A training method where the model improves through feedback. It tries
-          actions, receives rewards or penalties from humans or another model,
-          and learns to make better decisions over time.
+          GPT is a generative pre-trained transformer model that is first
+          trained on large-scale text data to learn grammar, facts, and
+          patterns, and then used to generate contextually accurate, human-like
+          text for tasks such as answering questions, summarizing content,
+          translating languages, and writing code.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -50,21 +52,16 @@ export default function Reinforcement() {
           "
         >
           <video
-            src="/reinforcement.mp4"
+            src="/GPT.mp4"
             autoPlay
             muted
             loop
             playsInline
-            width={400}
-            height={200}
+            width={600}
+            height={400}
             className="rounded-lg"
           ></video>
         </div>
-
-        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Improves the model through trial, error, and feedback until it gets
-          better results.
-        </p>
       </section>
     </div>
   );

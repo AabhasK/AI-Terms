@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Reinforcement() {
+export default function RNN() {
   return (
     <div
       className="
@@ -25,15 +25,15 @@ export default function Reinforcement() {
         transition-all duration-300
       "
     >
-      <section id="reinforcement" className="mb-14">
+      <section id="rnn" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Reinforcement Learning
+          RNN(Recurrent Neural network)
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          A training method where the model improves through feedback. It tries
-          actions, receives rewards or penalties from humans or another model,
-          and learns to make better decisions over time.
+          A basic RNN uses recurrent connections that pass information from one
+          step to the next, allowing the network to learn temporal patterns
+          through backpropagation(learning backwards)
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -49,21 +49,18 @@ export default function Reinforcement() {
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
           "
         >
-          <video
-            src="/reinforcement.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            width={400}
-            height={200}
+          <img
+            src="/RNN.png"
             className="rounded-lg"
-          ></video>
+            height={400}
+            width={600}
+            alt=""
+          />
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Improves the model through trial, error, and feedback until it gets
-          better results.
+          simple recurrent neural units with looping arrows that feed their
+          output back into themselves across time.
         </p>
       </section>
     </div>

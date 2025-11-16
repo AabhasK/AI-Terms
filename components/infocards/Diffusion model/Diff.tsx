@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Reinforcement() {
+export default function DiffusionModel() {
   return (
     <div
       className="
@@ -25,15 +25,15 @@ export default function Reinforcement() {
         transition-all duration-300
       "
     >
-      <section id="reinforcement" className="mb-14">
+      <section id="diffusion-model" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Reinforcement Learning
+          Diffusion Model
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          A training method where the model improves through feedback. It tries
-          actions, receives rewards or penalties from humans or another model,
-          and learns to make better decisions over time.
+          A diffusion model learns by gradually adding noise to real images and
+          training a network to reverse this process, allowing it to start from
+          pure noise and reconstruct a clean image during generation.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -50,20 +50,19 @@ export default function Reinforcement() {
           "
         >
           <video
-            src="/reinforcement.mp4"
+            src="/Diff.mp4"
             autoPlay
             muted
             loop
             playsInline
-            width={400}
-            height={200}
+            width={600}
+            height={400}
             className="rounded-lg"
           ></video>
         </div>
-
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Improves the model through trial, error, and feedback until it gets
-          better results.
+          A sequence of images showing a cat becoming progressively noisier,
+          with a neural network learning to denoise it back into a clear image.
         </p>
       </section>
     </div>

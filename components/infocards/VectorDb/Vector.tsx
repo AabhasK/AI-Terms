@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Reinforcement() {
+export default function Vector() {
   return (
     <div
       className="
@@ -25,15 +25,16 @@ export default function Reinforcement() {
         transition-all duration-300
       "
     >
-      <section id="reinforcement" className="mb-14">
+      <section id="vector-db" className="mb-14">
         <h2 className="text-base font-semibold text-[#ededed] mb-2">
-          Reinforcement Learning
+          Vector Database
         </h2>
 
         <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          A training method where the model improves through feedback. It tries
-          actions, receives rewards or penalties from humans or another model,
-          and learns to make better decisions over time.
+          A vector database stores embeddings created from content so they can
+          be searched using similarity instead of exact matches. When given a
+          query, it converts it to an embedding and returns the closest stored
+          vectors as the result.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
@@ -49,21 +50,18 @@ export default function Reinforcement() {
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
           "
         >
-          <video
-            src="/reinforcement.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            width={400}
-            height={200}
+          <img
+            src="/vector.png"
             className="rounded-lg"
-          ></video>
+            height={400}
+            width={600}
+            alt=""
+          />
         </div>
 
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
-          Improves the model through trial, error, and feedback until it gets
-          better results.
+          content and queries being converted into embeddings and stored in a
+          vector database, which returns the closest matching vectors.
         </p>
       </section>
     </div>

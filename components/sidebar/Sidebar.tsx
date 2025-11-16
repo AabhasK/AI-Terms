@@ -9,19 +9,25 @@ const items = [
   "Context window",
   "Latent space",
   "Neural network",
+  "RNN",
+  "CNN",
   "Parameter",
   "Model",
+  "Diffusion Model",
+  "Hugging Face",
   "Transformer",
   "Attention",
   "Pre-training",
   "Fine-tuning",
-  "Reinforcement learning",
+  "Reinforcement",
   "Chain of thought",
   "Inference",
   "RAG",
   "Agent",
   "Workflow",
   "LLM",
+  "Vector DB",
+  "GPT",
 ];
 
 function handleById(id: string) {
@@ -45,7 +51,7 @@ export default function Sidebar() {
       className="
         fixed top-0 left-0
         h-screen w-[30vw]
-        px-30 pt-30
+        px-35 pt-16
         overflow-y-auto
         hidden lg:block
         text-left flex flex-col items-start
@@ -86,7 +92,7 @@ export default function Sidebar() {
                 background: "transparent",
                 border: "none",
                 cursor: "pointer",
-                fontSize: "0.75rem", // smaller
+                fontSize: "0.7rem", // smaller
                 lineHeight: "1.05rem", // tighter
                 padding: "1px 0", // smaller spacing
                 transition: "color 0.15s ease",
