@@ -23,9 +23,10 @@ import Tokenization from "@/components/infocards/tokenization/tokenization";
 import Transformer from "@/components/infocards/transformer/transformer";
 import Vector from "@/components/infocards/VectorDb/Vector";
 import Workflow from "@/components/infocards/workflow/workflow";
-import Pretrain from "@/components/pretraining/pretrain";
+import Pretrain from "@/components/infocards/pretraining/pretrain";
 import Sidebar from "@/components/sidebar/Sidebar";
 import React from "react";
+import MCP from "@/components/infocards/MCP/MCP";
 
 const page = () => {
   return (
@@ -56,6 +57,7 @@ const page = () => {
       <LLM />
       <Vector />
       <GPT />
+      <MCP />
     </div>
   );
 };
