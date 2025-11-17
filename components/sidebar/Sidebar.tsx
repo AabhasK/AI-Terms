@@ -51,7 +51,7 @@ export default function Sidebar() {
       className="
         fixed top-0 left-0
         h-screen w-[30vw]
-        px-35 pt-16
+        px-35 pt-20
         overflow-y-auto
         hidden lg:block
         text-left flex flex-col items-start
