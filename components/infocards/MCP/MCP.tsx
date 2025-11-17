@@ -60,6 +60,17 @@ export default function MCP() {
             className="rounded-lg"
           ></video>
         </div>
+
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.cloudflare.com/learning/ai/what-is-model-context-protocol-mcp/"
+            className="underline"
+            target="_blank"
+          >
+            Cloudfare Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

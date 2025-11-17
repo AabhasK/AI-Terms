@@ -66,6 +66,17 @@ export default function Parameter() {
           understands data. More parameters typically mean a smarter, more
           flexible model (not always true).
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          Ref:{" "}
+          <a
+            href="https://www.ibm.com/think/topics/model-parameters"
+            className="underline"
+            target="_blank"
+          >
+            IBM Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

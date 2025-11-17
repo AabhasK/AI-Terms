@@ -103,7 +103,11 @@ export default function Tokenization() {
         </p>
         <div className="text-[#b5b5b5] text-xs text-center">
           Ref:{" "}
-          <a href="" className="underline">
+          <a
+            href="https://platform.openai.com/tokenizer"
+            className="underline"
+            target="_blank"
+          >
             OpenAI Tokenizer
           </a>
           , interactive tool to visualize text tokenization

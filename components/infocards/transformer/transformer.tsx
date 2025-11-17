@@ -114,6 +114,16 @@ export default function Transformer() {
           Understands relationships between words across a whole sentence — like
           a super fast reader.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://en.wikipedia.org/wiki/Transformer_(deep_learning)"
+            className="underline"
+            target="_blank"
+          >
+            Wikipedia(transformers)
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

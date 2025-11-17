@@ -63,6 +63,16 @@ export default function Latent() {
           Each dot is an embedding, placed near others with similar meaning.
           It’s how the model organizes concepts to relate them efficiently.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.coursera.org/articles/what-is-latent-space"
+            className="underline"
+            target="_blank"
+          >
+            Coursera Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

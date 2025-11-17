@@ -212,6 +212,16 @@ export default function Embedding() {
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           Turns tokens into points in space, grouped by meaning.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://aws.amazon.com/what-is/embeddings-in-machine-learning/"
+            className="underline"
+            target="_blank"
+          >
+            AWS Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

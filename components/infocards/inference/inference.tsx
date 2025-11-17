@@ -65,6 +65,16 @@ export default function Inference() {
           Basically what’s happening behind the scenes when you use an AI
           product.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.ibm.com/think/topics/ai-inference"
+            className="underline"
+            target="_blank"
+          >
+            IBM Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

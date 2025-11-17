@@ -61,6 +61,16 @@ export default function Agent() {
         <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           They choose their own actions to get things done.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.ibm.com/think/topics/ai-agents"
+            className="underline"
+            target="_blank"
+          >
+            IBM Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

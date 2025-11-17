@@ -64,6 +64,16 @@ export default function Huggingface() {
           AI hub where you can browse models, load them into code, run demos,
           host spaces, and access open-source ML resources.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://huggingface.co/learn/ml-games-course/en/unit1/what-is-hf"
+            className="underline"
+            target="_blank"
+          >
+            Hugging Face Docs
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

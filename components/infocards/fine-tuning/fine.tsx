@@ -97,6 +97,16 @@ export default function FineTune() {
           knows. <br />
           Here, it’s adapting to design vocabulary.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://cloud.google.com/use-cases/fine-tuning-ai-models"
+            className="underline"
+            target="_blank"
+          >
+            Google Cloud Docs
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

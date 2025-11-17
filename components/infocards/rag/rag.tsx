@@ -65,6 +65,16 @@ export default function RAG() {
           When you use an AI that can search the web, it lets the model pull
           fresh info before it writes an answer.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/r"
+            className="underline"
+            target="_blank"
+          >
+            NVIDIA Blog
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

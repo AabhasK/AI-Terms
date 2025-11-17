@@ -62,6 +62,16 @@ export default function GPT() {
             className="rounded-lg"
           ></video>
         </div>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://cloud.google.com/discover/what-is-gpt"
+            className="underline"
+            target="_blank"
+          >
+            Google Cloud Docs
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

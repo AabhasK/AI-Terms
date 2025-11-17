@@ -62,6 +62,16 @@ export default function RNN() {
           simple recurrent neural units with looping arrows that feed their
           output back into themselves across time.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.geeksforgeeks.org/machine-learning/introduction-to-recurrent-neural-network/"
+            className="underline"
+            target="_blank"
+          >
+            GfG Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

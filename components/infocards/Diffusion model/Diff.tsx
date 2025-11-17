@@ -64,6 +64,16 @@ export default function DiffusionModel() {
           A sequence of images showing a cat becoming progressively noisier,
           with a neural network learning to denoise it back into a clear image.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.ibm.com/think/topics/diffusion-models"
+            className="underline"
+            target="_blank"
+          >
+            IBM Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

@@ -64,6 +64,16 @@ export default function Attention() {
           Helps the model decide which words to focus on for meaning. So it
           doesn’t treat all words equally but picks out what really matters.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.ibm.com/think/topics/attention-mechanism"
+            className="underline"
+            target="_blank"
+          >
+            IBM Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

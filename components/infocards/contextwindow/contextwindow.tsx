@@ -98,6 +98,15 @@ export default function Contextwindow() {
           The model can process a limited number of tokens at once. It varies a
           lot depending on the model.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.ibm.com/think/topics/context-window"
+            className="underline"
+          >
+            IBM Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

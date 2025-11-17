@@ -64,6 +64,16 @@ export default function CNN() {
           how an image passes through convolutional filters that extract
           features at different levels of abstraction.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.geeksforgeeks.org/machine-learning/introduction-convolution-neural-network/"
+            className="underline"
+            target="_blank"
+          >
+            GfG Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

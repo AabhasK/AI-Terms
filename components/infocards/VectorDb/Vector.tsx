@@ -63,6 +63,17 @@ export default function Vector() {
           content and queries being converted into embeddings and stored in a
           vector database, which returns the closest matching vectors.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          Ref:{" "}
+          <a
+            href="https://www.nvidia.com/en-in/glossary/vector-database/"
+            className="underline"
+            target="_blank"
+          >
+            NVIDIA Blog
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

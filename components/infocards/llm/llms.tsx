@@ -59,6 +59,16 @@ export default function LLM() {
             className="rounded-lg"
           ></video>
         </div>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://aws.amazon.com/what-is/large-language-model/"
+            className="underline"
+            target="_blank"
+          >
+            AWS Docs
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );

@@ -65,6 +65,16 @@ export default function Neural() {
           meaning. So by the end, the network can turn a question into the right
           answer.
         </p>
+        <div className="text-[#b5b5b5] text-xs text-center">
+          <a
+            href="https://www.ibm.com/think/topics/neural-networks"
+            className="underline"
+            target="_blank"
+          >
+            IBM Article
+          </a>
+          , for more information
+        </div>
       </section>
     </div>
   );
