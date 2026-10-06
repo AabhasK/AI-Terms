@@ -1,6 +1,5 @@
-// Live model catalog from the Vercel AI Gateway.
-// Reading the catalog is public; JEV_API_KEY is only needed to call a model
-// (see app/api/compare/route.ts).
+// Live model catalog from the Vercel AI Gateway. Reading the catalog is
+// public; calling a model needs auth (see app/api/compare/route.ts).
 
 export const GATEWAY_URL = "https://ai-gateway.vercel.sh/v1";
 

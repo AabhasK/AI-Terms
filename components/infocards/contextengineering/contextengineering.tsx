@@ -16,11 +16,15 @@ const blocks = [
 
 export default function ContextEngineering() {
   const [on, setOn] = useState<string[]>(["Instructions", "Full chat history"]);
-  const used = blocks.filter((b) => on.includes(b.name)).reduce((s, b) => s + b.tokens, 0);
+  const used = blocks
+    .filter((b) => on.includes(b.name))
+    .reduce((s, b) => s + b.tokens, 0);
   const over = used > BUDGET;
 
   const toggle = (n: string) =>
-    setOn((cur) => (cur.includes(n) ? cur.filter((x) => x !== n) : [...cur, n]));
+    setOn((cur) =>
+      cur.includes(n) ? cur.filter((x) => x !== n) : [...cur, n],
+    );
 
   return (
     <TermSection
@@ -42,7 +46,10 @@ export default function ContextEngineering() {
                   : "border-line text-faint hover:text-muted"
               }`}
             >
-              {b.name} <span className="font-mono opacity-60">{(b.tokens / 1000).toFixed(1)}k</span>
+              {b.name}{" "}
+              <span className="font-mono opacity-60">
+                {(b.tokens / 1000).toFixed(1)}k
+              </span>
             </button>
           ))}
         </div>
@@ -50,7 +57,9 @@ export default function ContextEngineering() {
         <div>
           <div className="mb-1.5 flex justify-between text-xs">
             <span className="text-muted">context budget</span>
-            <span className={`font-mono ${over ? "text-[#f4a37d]" : "text-text"}`}>
+            <span
+              className={`font-mono ${over ? "text-[#f4a37d]" : "text-text"}`}
+            >
               {used.toLocaleString()} / {BUDGET.toLocaleString()}
             </span>
           </div>
