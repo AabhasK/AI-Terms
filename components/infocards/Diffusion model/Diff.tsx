@@ -26,11 +26,11 @@ export default function DiffusionModel() {
       "
     >
       <section id="diffusion-model" className="mb-14">
-        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">
           Diffusion Model
         </h2>
 
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
           A diffusion model learns by gradually adding noise to real images and
           training a network to reverse this process, allowing it to start from
           pure noise and reconstruct a clean image during generation.
@@ -39,11 +39,11 @@ export default function DiffusionModel() {
         {/* ANIMATED TOKENIZATION CARD */}
         <div
           className="
-            border border-[#262d3d]
+            border border-[#2a2a2a]
             rounded-xl
             p-6
             w-full
-            bg-[#141925]
+            bg-[#161616]
             flex flex-col items-center justify-center
             gap-4
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -60,11 +60,11 @@ export default function DiffusionModel() {
             className="rounded-lg"
           ></video>
         </div>
-        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           A sequence of images showing a cat becoming progressively noisier,
           with a neural network learning to denoise it back into a clear image.
         </p>
-        <div className="text-[#98a1b6] text-xs text-center">
+        <div className="text-[#b5b5b5] text-xs text-center">
           <a
             href="https://www.ibm.com/think/topics/diffusion-models"
             className="underline"

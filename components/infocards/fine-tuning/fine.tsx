@@ -30,11 +30,11 @@ export default function FineTune() {
       "
     >
       <section id="fine-tuning" className="mb-14">
-        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">
           Fine Tuning
         </h2>
 
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
           Training a pre-trained model on new, specific data so it adapts to a
           particular task or tone. It keeps what it already knows but learns to
           apply it in a focused way.
@@ -43,11 +43,11 @@ export default function FineTune() {
         {/* CARD */}
         <div
           className="
-            border border-[#262d3d]
+            border border-[#2a2a2a]
             rounded-xl
             p-6
             w-full
-            bg-[#141925]
+            bg-[#161616]
             flex flex-col items-center justify-center
             gap-6
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -68,9 +68,9 @@ export default function FineTune() {
                 }}
                 className="
                   px-3 py-1 mt-15 mb-15
-                  rounded-md border border-[#262d3d]
-                  bg-[#181e2b]
-                  text-[#e6e9f2] text-xs
+                  rounded-md border border-[#2a2a2a]
+                  bg-[#1a1a1a]
+                  text-[#ededed] text-xs
                 "
               >
                 {word}
@@ -81,10 +81,10 @@ export default function FineTune() {
           <button
             onClick={() => setTuned(!tuned)}
             className="
-              bg-[#e2e6ef] text-[#181e2b]
+              bg-[#e5e5e5] text-[#1a1a1a]
               px-6 py-2 rounded-xl
               text-xs font-medium
-              hover:bg-[#d0d5e0]
+              hover:bg-[#d6d6d6]
               transition
             "
           >
@@ -92,12 +92,12 @@ export default function FineTune() {
           </button>
         </div>
 
-        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           Teaches the model a new skill without forgetting what it already
           knows. <br />
           Here, it’s adapting to design vocabulary.
         </p>
-        <div className="text-[#98a1b6] text-xs text-center">
+        <div className="text-[#b5b5b5] text-xs text-center">
           <a
             href="https://cloud.google.com/use-cases/fine-tuning-ai-models"
             className="underline"

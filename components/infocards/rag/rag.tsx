@@ -33,11 +33,11 @@ export default function RAG() {
       "
     >
       <section id="rag" className="mb-14">
-        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">
           RAG (Retrieval Augmented Generation)
         </h2>
 
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
           A method that lets a model look up information before answering. It
           retrieves relevant data from external sources, then uses that context
           to write a more complete answer.
@@ -45,10 +45,10 @@ export default function RAG() {
 
         <div
           className="
-            border border-[#262d3d]
+            border border-[#2a2a2a]
             rounded-xl p-6
             w-full
-            bg-[#141925]
+            bg-[#161616]
             flex flex-col items-center gap-6
             min-h-[220px]
           "
@@ -59,7 +59,7 @@ export default function RAG() {
               <div
                 key={i}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i <= step ? "bg-[#e6e9f2]" : "bg-[#2c3446]"
+                  i <= step ? "bg-[#ededed]" : "bg-[#2e2e2e]"
                 }`}
               />
             ))}
@@ -77,10 +77,10 @@ export default function RAG() {
                   transition={{ duration: 0.2 }}
                   className="flex flex-col items-center gap-3 w-full"
                 >
-                  <span className="text-[10px] tracking-widest uppercase text-[#58617a]">
+                  <span className="text-[10px] tracking-widest uppercase text-[#555]">
                     query
                   </span>
-                  <div className="border border-[#333b4d] rounded-lg px-5 py-2.5 text-sm text-[#e6e9f2]">
+                  <div className="border border-[#333] rounded-lg px-5 py-2.5 text-sm text-[#ededed]">
                     What causes northern lights?
                   </div>
                 </motion.div>
@@ -95,7 +95,7 @@ export default function RAG() {
                   transition={{ duration: 0.2 }}
                   className="flex flex-col items-center gap-3 w-full"
                 >
-                  <span className="text-[10px] tracking-widest uppercase text-[#58617a]">
+                  <span className="text-[10px] tracking-widest uppercase text-[#555]">
                     retrieved docs
                   </span>
                   <div className="flex flex-col gap-2 w-full">
@@ -105,12 +105,12 @@ export default function RAG() {
                         initial={{ opacity: 0, x: -8 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.12, duration: 0.2 }}
-                        className="border border-[#262d3d] rounded-lg px-4 py-2.5 bg-[#181e2b]"
+                        className="border border-[#2a2a2a] rounded-lg px-4 py-2.5 bg-[#1a1a1a]"
                       >
-                        <p className="text-xs font-medium text-[#e6e9f2]">
+                        <p className="text-xs font-medium text-[#ededed]">
                           {doc.title}
                         </p>
-                        <p className="text-xs text-[#6b7489] mt-0.5">
+                        <p className="text-xs text-[#666] mt-0.5">
                           {doc.snippet}
                         </p>
                       </motion.div>
@@ -128,11 +128,11 @@ export default function RAG() {
                   transition={{ duration: 0.2 }}
                   className="flex flex-col items-center gap-3 w-full"
                 >
-                  <span className="text-[10px] tracking-widest uppercase text-[#58617a]">
+                  <span className="text-[10px] tracking-widest uppercase text-[#555]">
                     generated answer
                   </span>
-                  <div className="border border-[#262d3d] rounded-lg px-4 py-3 bg-[#181e2b] w-full">
-                    <p className="text-sm text-[#c3c9d6] leading-relaxed">
+                  <div className="border border-[#2a2a2a] rounded-lg px-4 py-3 bg-[#1a1a1a] w-full">
+                    <p className="text-sm text-[#cfcfcf] leading-relaxed">
                       {answer}
                     </p>
                   </div>
@@ -146,24 +146,24 @@ export default function RAG() {
             {step < 2 && (
               <button
                 onClick={() => setStep((s) => s + 1)}
-                className="bg-white text-[#262d3d] text-sm px-4 py-1 rounded-md hover:bg-neutral-300 transition"
+                className="bg-white text-[#2a2a2a] text-sm px-4 py-1 rounded-md hover:bg-neutral-300 transition"
               >
                 {step === 0 ? "Retrieve" : "Generate"}
               </button>
             )}
             <button
               onClick={() => setStep(0)}
-              className="border border-[#262d3d] text-[#7a8397] text-sm px-4 py-1 rounded-md hover:text-[#e6e9f2] transition"
+              className="border border-[#2a2a2a] text-[#777] text-sm px-4 py-1 rounded-md hover:text-[#ededed] transition"
             >
               Reset
             </button>
           </div>
         </div>
 
-        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           Finds relevant information first, then writes an answer grounded in it.
         </p>
-        <div className="text-[#98a1b6] text-xs text-center">
+        <div className="text-[#b5b5b5] text-xs text-center">
           <a
             href="https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/"
             className="underline"

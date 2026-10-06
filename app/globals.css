@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
-/* Design tokens: a cool "ink" base with one accent, attention cyan,
-   reserved for whatever the reader (or the model) is focused on. */
+/* Design tokens: the site's original neutral dark greys. The "accent" is
+   the same near-white as the text, so the whole site stays monochrome. */
 :root {
-  --ink: #0d1017;
-  --panel: #141925;
-  --panel-2: #181e2b;
-  --line: #262d3d;
-  --text: #e6e9f2;
-  --muted: #98a1b6;
-  --faint: #58617a;
-  --accent: #7de3f4;
-  --accent-soft: rgba(125, 227, 244, 0.12);
+  --ink: #121212;
+  --panel: #161616;
+  --panel-2: #1a1a1a;
+  --line: #2a2a2a;
+  --text: #ededed;
+  --muted: #b5b5b5;
+  --faint: #777777;
+  --accent: #ededed;
 }
 
 @theme inline {

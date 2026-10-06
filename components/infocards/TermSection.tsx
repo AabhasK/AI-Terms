@@ -32,7 +32,7 @@ export default function TermSection({
     >
       <section id={id} className="mb-14">
         <h2 className="text-text">{title}</h2>
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
           {description}
         </p>
 

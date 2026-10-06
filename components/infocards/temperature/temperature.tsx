@@ -64,7 +64,7 @@ export default function Temperature() {
             step={0.05}
             value={temp}
             onChange={(e) => setTemp(Number(e.target.value))}
-            className="w-full max-w-[300px] cursor-pointer accent-[#7de3f4]"
+            className="w-full max-w-[300px] cursor-pointer accent-white"
             aria-label="Temperature"
           />
           <span className="text-xs text-faint">

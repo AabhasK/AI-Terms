@@ -1,16 +1,10 @@
-import { glossary } from "@/lib/glossary";
+import { allTerms } from "@/lib/glossary";
 
+// One compact flat list, sized to fit the screen so the sidebar never needs
+// its own scrollbar.
 export default function Sidebar() {
   return (
-    <aside
-      className="
-        fixed top-0 left-0
-        h-dvh w-[30vw]
-        pl-[8vw] pr-6 pt-24 pb-10
-        overflow-y-auto [scrollbar-width:none]
-        hidden lg:block
-      "
-    >
+    <aside className="fixed top-0 left-0 hidden h-dvh w-[30vw] overflow-hidden pt-16 pl-[8vw] lg:block">
       <div className="fixed top-4 left-4 z-10">
         <a href="https://github.com/AabhasK" aria-label="GitHub profile">
           <img
@@ -21,26 +15,21 @@ export default function Sidebar() {
         </a>
       </div>
 
-      <nav aria-label="Glossary terms" className="flex max-w-[220px] flex-col gap-6">
-        {glossary.map((group) => (
-          <div key={group.title}>
-            <h3 className="mb-2 font-display text-[0.8rem] font-semibold text-muted">
-              {group.title}
-            </h3>
-            <ul className="flex flex-col border-l border-line">
-              {group.terms.map((term) => (
-                <li key={term.id}>
-                  <a
-                    href={`#${term.id}`}
-                    className="-ml-px block border-l border-transparent py-[3px] pl-3 text-[0.75rem] text-faint hover:border-accent hover:text-text"
-                  >
-                    {term.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <h2 className="mb-4 text-lg font-semibold text-text">AI Glossary</h2>
+
+      <nav aria-label="Glossary terms">
+        <ul>
+          {allTerms.map((term) => (
+            <li key={term.id}>
+              <a
+                href={`#${term.id}`}
+                className="block py-px text-[0.7rem] leading-4 text-text hover:text-muted"
+              >
+                {term.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </nav>
     </aside>
   );

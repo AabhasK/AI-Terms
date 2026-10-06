@@ -26,9 +26,9 @@ export default function Model() {
       "
     >
       <section id="model" className="mb-14">
-        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">Model</h2>
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">Model</h2>
 
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
           A system that has learned from data and can now use that knowledge to
           predict, generate, or understand new information.
         </p>
@@ -36,11 +36,11 @@ export default function Model() {
         {/* ANIMATED TOKENIZATION CARD */}
         <div
           className="
-            border border-[#262d3d]
+            border border-[#2a2a2a]
             rounded-xl
             p-6
             w-full
-            bg-[#141925]
+            bg-[#161616]
             flex flex-col items-center justify-center
             gap-4
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -55,7 +55,7 @@ export default function Model() {
           />
         </div>
 
-        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           Many of OpenAI's models. ChatGPT 5 was trained on around 52.5 Trillion
           parameters(That's a lot of data!!)
         </p>

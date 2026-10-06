@@ -25,11 +25,11 @@ export default function Contextwindow() {
       "
     >
       <section id="context-window" className="mb-14 w-full">
-        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">
           Context window
         </h2>
 
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-8 max-w-2xl">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-8 max-w-2xl">
           The limit of how much text a model can consider at once, measured in
           tokens. It includes your prompt, any documents, the conversation so
           far and the model&apos;s own reply. Frontier models in 2026 have
@@ -39,10 +39,10 @@ export default function Contextwindow() {
 
         <div
           className="
-            border border-[#262d3d]
+            border border-[#2a2a2a]
             rounded-xl p-6
             w-full
-            bg-[#141925]
+            bg-[#161616]
             flex flex-col gap-6
           "
         >
@@ -53,8 +53,8 @@ export default function Contextwindow() {
                 key={i}
                 className={`px-2 py-0.5 rounded-md border text-xs transition-all duration-200 ${
                   i < limit
-                    ? "border-[#333b4d] text-[#e6e9f2]"
-                    : "border-[#1b2130] text-[#2c3446]"
+                    ? "border-[#333] text-[#ededed]"
+                    : "border-[#1e1e1e] text-[#2e2e2e]"
                 }`}
               >
                 {t}
@@ -72,19 +72,19 @@ export default function Contextwindow() {
               onChange={(e) => setLimit(Number(e.target.value))}
               className="w-full max-w-[300px] accent-white cursor-pointer"
             />
-            <span className="text-xs text-[#6b7489]">
-              <span className="text-[#e6e9f2]">{limit}</span>
+            <span className="text-xs text-[#666]">
+              <span className="text-[#ededed]">{limit}</span>
               {" / "}
               {tokens.length} tokens in window
             </span>
           </div>
         </div>
 
-        <p className="text-center text-[#98a1b6] text-xs mt-6 leading-relaxed max-w-xl mx-auto">
+        <p className="text-center text-[#b5b5b5] text-xs mt-6 leading-relaxed max-w-xl mx-auto">
           Tokens outside the window are invisible to the model. It cannot see
           or reason about them at all.
         </p>
-        <div className="text-[#98a1b6] text-xs text-center">
+        <div className="text-[#b5b5b5] text-xs text-center">
           <a
             href="https://www.ibm.com/think/topics/context-window"
             className="underline"

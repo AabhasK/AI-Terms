@@ -26,11 +26,11 @@ export default function Vector() {
       "
     >
       <section id="vector-db" className="mb-14">
-        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">
           Vector Database
         </h2>
 
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
           A vector database stores embeddings created from content so they can
           be searched using similarity instead of exact matches. When given a
           query, it converts it to an embedding and returns the closest stored
@@ -40,11 +40,11 @@ export default function Vector() {
         {/* ANIMATED TOKENIZATION CARD */}
         <div
           className="
-            border border-[#262d3d]
+            border border-[#2a2a2a]
             rounded-xl
             p-6
             w-full
-            bg-[#141925]
+            bg-[#161616]
             flex flex-col items-center justify-center
             gap-4
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -59,11 +59,11 @@ export default function Vector() {
           />
         </div>
 
-        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           content and queries being converted into embeddings and stored in a
           vector database, which returns the closest matching vectors.
         </p>
-        <div className="text-[#98a1b6] text-xs text-center">
+        <div className="text-[#b5b5b5] text-xs text-center">
           Ref:{" "}
           <a
             href="https://www.nvidia.com/en-in/glossary/vector-database/"

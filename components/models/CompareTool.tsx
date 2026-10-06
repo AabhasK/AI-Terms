@@ -66,7 +66,7 @@ export default function CompareTool({ models }: { models: ModelInfo[] }) {
 
       {error && <p className="mt-4 text-sm text-[#f4a37d]">{error}</p>}
       {answer && (
-        <p className="mt-5 whitespace-pre-line border-l-2 border-accent pl-4 text-sm leading-relaxed text-[#c3c9d6] text-pretty">
+        <p className="mt-5 whitespace-pre-line border-l-2 border-accent pl-4 text-sm leading-relaxed text-[#cfcfcf] text-pretty">
           {answer}
         </p>
       )}

@@ -26,11 +26,11 @@ export default function Pretrain() {
       "
     >
       <section id="pre-training" className="mb-14">
-        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">
           Pre Training
         </h2>
 
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
           The first learning stage where a model trains on vast text data to
           learn patterns, context, and general knowledge.
         </p>
@@ -38,11 +38,11 @@ export default function Pretrain() {
         {/* ANIMATED TOKENIZATION CARD */}
         <div
           className="
-            border border-[#262d3d]
+            border border-[#2a2a2a]
             rounded-xl
             p-6
             w-full
-            bg-[#141925]
+            bg-[#161616]
             flex flex-col items-center justify-center
             gap-4
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -60,7 +60,7 @@ export default function Pretrain() {
           ></video>
         </div>
 
-        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           Helps the model adapt more quickly and effectively to specific tasks
           later without starting from scratch.
         </p>

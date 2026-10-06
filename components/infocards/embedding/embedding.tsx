@@ -52,11 +52,11 @@ export default function Embedding() {
       "
     >
       <section id="embedding" className="mb-14">
-        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
+        <h2 className="text-base font-semibold text-[#ededed] mb-2">
           Embedding
         </h2>
 
-        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
           The model turns each token into numbers that represent its meaning.
           Tokens with similar meanings have vectors that are close in space.
         </p>
@@ -64,10 +64,10 @@ export default function Embedding() {
         {/* CARD */}
         <div
           className="
-            border border-[#262d3d]
+            border border-[#2a2a2a]
             rounded-xl p-6
             w-full
-            bg-[#141925]
+            bg-[#161616]
             flex flex-col items-center
             gap-6
           "
@@ -91,8 +91,8 @@ export default function Embedding() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2, delay: i * 0.03 }}
                     className="
-                      px-3 py-1 rounded-md border border-[#333b4d]
-                      text-xs text-[#e6e9f2]
+                      px-3 py-1 rounded-md border border-[#333]
+                      text-xs text-[#ededed]
                     "
                   >
                     {w}
@@ -106,18 +106,18 @@ export default function Embedding() {
               <motion.div layout className="grid grid-cols-2 gap-8 w-full">
                 {/* Elements */}
                 <motion.div layout className="flex flex-col gap-2">
-                  <span className="text-xs text-[#e6e9f2]">elements</span>
+                  <span className="text-xs text-[#ededed]">elements</span>
                   <motion.div
                     layout
-                    className="p-2 rounded-lg border border-dashed border-[#333b4d] flex gap-2 flex-wrap"
+                    className="p-2 rounded-lg border border-dashed border-[#333] flex gap-2 flex-wrap"
                   >
                     {groups.elements.map((w, i) => (
                       <motion.span
                         key={i}
                         layout
                         className="
-                          px-3 py-1 rounded-md border border-[#333b4d]
-                          text-xs text-[#e6e9f2]
+                          px-3 py-1 rounded-md border border-[#333]
+                          text-xs text-[#ededed]
                         "
                       >
                         {w}
@@ -128,18 +128,18 @@ export default function Embedding() {
 
                 {/* Actions */}
                 <motion.div layout className="flex flex-col gap-2">
-                  <span className="text-xs text-[#e6e9f2]">actions</span>
+                  <span className="text-xs text-[#ededed]">actions</span>
                   <motion.div
                     layout
-                    className="p-2 rounded-lg border border-dashed border-[#333b4d] flex gap-2 flex-wrap"
+                    className="p-2 rounded-lg border border-dashed border-[#333] flex gap-2 flex-wrap"
                   >
                     {groups.actions.map((w, i) => (
                       <motion.span
                         key={i}
                         layout
                         className="
-                          px-3 py-1 rounded-md border border-[#333b4d]
-                          text-xs text-[#e6e9f2]
+                          px-3 py-1 rounded-md border border-[#333]
+                          text-xs text-[#ededed]
                         "
                       >
                         {w}
@@ -150,18 +150,18 @@ export default function Embedding() {
 
                 {/* States */}
                 <motion.div layout className="flex flex-col gap-2">
-                  <span className="text-xs text-[#e6e9f2]">states</span>
+                  <span className="text-xs text-[#ededed]">states</span>
                   <motion.div
                     layout
-                    className="p-2 rounded-lg border border-dashed border-[#333b4d] flex gap-2 flex-wrap"
+                    className="p-2 rounded-lg border border-dashed border-[#333] flex gap-2 flex-wrap"
                   >
                     {groups.states.map((w, i) => (
                       <motion.span
                         key={i}
                         layout
                         className="
-                          px-3 py-1 rounded-md border border-[#333b4d]
-                          text-xs text-[#e6e9f2]
+                          px-3 py-1 rounded-md border border-[#333]
+                          text-xs text-[#ededed]
                         "
                       >
                         {w}
@@ -172,18 +172,18 @@ export default function Embedding() {
 
                 {/* Neutral */}
                 <motion.div layout className="flex flex-col gap-2">
-                  <span className="text-xs text-[#e6e9f2]">neutral</span>
+                  <span className="text-xs text-[#ededed]">neutral</span>
                   <motion.div
                     layout
-                    className="p-2 rounded-lg border border-dashed border-[#333b4d] flex gap-2 flex-wrap"
+                    className="p-2 rounded-lg border border-dashed border-[#333] flex gap-2 flex-wrap"
                   >
                     {groups.neutral.map((w, i) => (
                       <motion.span
                         key={i}
                         layout
                         className="
-                          px-3 py-1 rounded-md border border-[#333b4d]
-                          text-xs text-[#e6e9f2]
+                          px-3 py-1 rounded-md border border-[#333]
+                          text-xs text-[#ededed]
                         "
                       >
                         {w}
@@ -199,7 +199,7 @@ export default function Embedding() {
           <button
             onClick={() => setEmbedded(!embedded)}
             className="
-              bg-white text-[#262d3d] text-sm
+              bg-white text-[#2a2a2a] text-sm
               px-4 py-1 rounded-md
               hover:bg-neutral-300
               transition
@@ -209,10 +209,10 @@ export default function Embedding() {
           </button>
         </div>
 
-        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
           Turns tokens into points in space, grouped by meaning.
         </p>
-        <div className="text-[#98a1b6] text-xs text-center">
+        <div className="text-[#b5b5b5] text-xs text-center">
           <a
             href="https://aws.amazon.com/what-is/embeddings-in-machine-learning/"
             className="underline"
