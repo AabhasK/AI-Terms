@@ -45,11 +45,11 @@ export default function Transformer() {
       "
     >
       <section id="transformer" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">
+        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
           Transformer
         </h2>
 
-        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6 max-w-2xl">
           A type of neural network that looks at every word in a sequence at
           once. Unlike earlier models that read step by step, it learns how
           words relate across the whole text, allowing it to understand context
@@ -59,13 +59,13 @@ export default function Transformer() {
         {/* CARD */}
         <div
           className="
-            border border-[#2a2a2a]
+            border border-[#262d3d]
             rounded-xl
             p-5
             
             
             w-full
-            bg-[#161616]
+            bg-[#141925]
             flex flex-col items-center
             justify-center
             gap-4
@@ -91,13 +91,13 @@ export default function Transformer() {
                       cursor-default select-none
                       h-[24px] px-2 text-xs sm:text-xs
                       shadow-2xs ring-1
-                      border-[0.25px] border-[#ededed]
-                      bg-[#1a1a1a]
-                      text-[#ededed]
+                      border-[0.25px] border-[#e6e9f2]
+                      bg-[#181e2b]
+                      text-[#e6e9f2]
 
                       ${
                         isActive
-                          ? "bg-neutral-600 text-[#ededed] "
+                          ? "bg-neutral-600 text-[#e6e9f2] "
                           : "opacity-50"
                       }
                     `}
@@ -110,11 +110,11 @@ export default function Transformer() {
           </div>
         </div>
 
-        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
           Understands relationships between words across a whole sentence — like
           a super fast reader.
         </p>
-        <div className="text-[#b5b5b5] text-xs text-center">
+        <div className="text-[#98a1b6] text-xs text-center">
           <a
             href="https://en.wikipedia.org/wiki/Transformer_(deep_learning)"
             className="underline"

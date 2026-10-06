@@ -26,11 +26,11 @@ export default function LLM() {
       "
     >
       <section id="llm" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">
+        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
           LLM(Large Language Model)
         </h2>
 
-        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
+        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
           A very large neural network trained on vast text data to understand,
           predict, and generate human language.
         </p>
@@ -38,11 +38,11 @@ export default function LLM() {
         {/* ANIMATED TOKENIZATION CARD */}
         <div
           className="
-            border border-[#2a2a2a]
+            border border-[#262d3d]
             rounded-xl
             p-6
             w-full
-            bg-[#161616]
+            bg-[#141925]
             flex flex-col items-center justify-center
             gap-4
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -59,7 +59,7 @@ export default function LLM() {
             className="rounded-lg"
           ></video>
         </div>
-        <div className="text-[#b5b5b5] text-xs text-center">
+        <div className="text-[#98a1b6] text-xs text-center">
           <a
             href="https://aws.amazon.com/what-is/large-language-model/"
             className="underline"

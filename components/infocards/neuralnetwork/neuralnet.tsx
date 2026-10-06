@@ -26,23 +26,26 @@ export default function Neural() {
       "
     >
       <section id="neural-network" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">
+        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
           Neural Network
         </h2>
 
-        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          An internal map where the model organizes what it has learned. Each
-          point represents a concept, and similar ideas group close together.
+        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+          Layers of simple connected units (neurons), loosely inspired by the
+          brain. Each neuron multiplies its inputs by learned weights, adds
+          them up and passes the result on. Stacking many layers lets the
+          network learn complex patterns from examples instead of hand-written
+          rules. Every modern AI model is a neural network.
         </p>
 
         {/* ANIMATED TOKENIZATION CARD */}
         <div
           className="
-            border border-[#2a2a2a]
+            border border-[#262d3d]
             rounded-xl
             p-6
             w-full
-            bg-[#161616]
+            bg-[#141925]
             flex flex-col items-center justify-center
             gap-4
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -60,12 +63,12 @@ export default function Neural() {
           ></video>
         </div>
 
-        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
           Each layer transforms the information a bit, finding patterns and
           meaning. So by the end, the network can turn a question into the right
           answer.
         </p>
-        <div className="text-[#b5b5b5] text-xs text-center">
+        <div className="text-[#98a1b6] text-xs text-center">
           <a
             href="https://www.ibm.com/think/topics/neural-networks"
             className="underline"

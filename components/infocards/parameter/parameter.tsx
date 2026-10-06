@@ -26,11 +26,11 @@ export default function Parameter() {
       "
     >
       <section id="parameter" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">
+        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
           Parameter
         </h2>
 
-        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
+        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
           Values the model learns during training that determine how strongly
           different parts of the network connect and respond. Together, they
           define how the model understands and generates information.
@@ -39,11 +39,11 @@ export default function Parameter() {
         {/* ANIMATED TOKENIZATION CARD */}
         <div
           className="
-            border border-[#2a2a2a]
+            border border-[#262d3d]
             rounded-xl
             p-6
             w-full
-            bg-[#161616]
+            bg-[#141925]
             flex flex-col items-center justify-center
             gap-4
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -61,12 +61,12 @@ export default function Parameter() {
           ></video>
         </div>
 
-        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
           Each dot represents a learned value that shapes how the model
           understands data. More parameters typically mean a smarter, more
           flexible model (not always true).
         </p>
-        <div className="text-[#b5b5b5] text-xs text-center">
+        <div className="text-[#98a1b6] text-xs text-center">
           Ref:{" "}
           <a
             href="https://www.ibm.com/think/topics/model-parameters"

@@ -48,11 +48,11 @@ export default function MCP() {
       "
     >
       <section id="mcp" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">
+        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
           MCP (Model Context Protocol)
         </h2>
 
-        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
+        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
           The Model Context Protocol (MCP) is a standardized system that lets
           apps securely access external tools, data sources, and services
           through a consistent, structured interface.
@@ -60,10 +60,10 @@ export default function MCP() {
 
         <div
           className="
-            border border-[#2a2a2a]
+            border border-[#262d3d]
             rounded-xl p-6
             w-full
-            bg-[#161616]
+            bg-[#141925]
             flex flex-col items-center gap-8
           "
         >
@@ -77,15 +77,15 @@ export default function MCP() {
                     transition-all duration-300 min-w-20
                     ${
                       activeNode === i
-                        ? "border-[#ededed] text-[#ededed] bg-[#212121]"
-                        : "border-[#252525] text-[#444]"
+                        ? "border-[#e6e9f2] text-[#e6e9f2] bg-[#1d2433]"
+                        : "border-[#232a39] text-[#4a5367]"
                     }
                   `}
                 >
                   {name}
                 </div>
                 {i < nodes.length - 1 && (
-                  <div className="w-8 h-px bg-[#252525] shrink-0" />
+                  <div className="w-8 h-px bg-[#232a39] shrink-0" />
                 )}
               </div>
             ))}
@@ -101,7 +101,7 @@ export default function MCP() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.15 }}
-                  className="text-xs text-[#777] text-center"
+                  className="text-xs text-[#7a8397] text-center"
                 >
                   {label}
                 </motion.p>
@@ -113,17 +113,17 @@ export default function MCP() {
           <button
             onClick={runFlow}
             disabled={running}
-            className="bg-white text-[#2a2a2a] text-sm px-4 py-1 rounded-md hover:bg-neutral-300 transition disabled:opacity-40 disabled:cursor-not-allowed"
+            className="bg-white text-[#262d3d] text-sm px-4 py-1 rounded-md hover:bg-neutral-300 transition disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Send Request
           </button>
         </div>
 
-        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
           One standard protocol, any tool — apps connect once and gain access
           to everything.
         </p>
-        <div className="text-[#b5b5b5] text-xs text-center">
+        <div className="text-[#98a1b6] text-xs text-center">
           <a
             href="https://www.cloudflare.com/learning/ai/what-is-model-context-protocol-mcp/"
             className="underline"

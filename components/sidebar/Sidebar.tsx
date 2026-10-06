@@ -1,109 +1,47 @@
-"use client";
-
-import { animate } from "framer-motion";
-
-const items = [
-  "Token",
-  "Tokenization",
-  "Embedding",
-  "Context window",
-  "Latent space",
-  "Neural network",
-  "RNN",
-  "CNN",
-  "Parameter",
-  "Model",
-  "Diffusion Model",
-  "Hugging Face",
-  "Transformer",
-  "Attention",
-  "Pre-training",
-  "Fine-tuning",
-  "Reinforcement",
-  "Chain of thought",
-  "Inference",
-  "RAG",
-  "Agent",
-  "Workflow",
-  "LLM",
-  "Vector DB",
-  "GPT",
-  "MCP",
-];
-
-function handleById(id: string) {
-  const el = document.getElementById(id);
-  if (!el) return;
-
-  window.history.replaceState(null, "", `#${id}`);
-
-  const targetY = el.getBoundingClientRect().top + window.scrollY - 20;
-
-  animate(window.scrollY, targetY, {
-    duration: 0.55,
-    ease: "easeOut",
-    onUpdate: (v) => window.scrollTo(0, v),
-  });
-}
+import { glossary } from "@/lib/glossary";
 
 export default function Sidebar() {
   return (
     <aside
       className="
         fixed top-0 left-0
-        h-screen w-[30vw]
-        px-35 pt-19
-        overflow-y-auto
+        h-dvh w-[30vw]
+        pl-[8vw] pr-6 pt-24 pb-10
+        overflow-y-auto [scrollbar-width:none]
         hidden lg:block
-        text-left flex flex-col items-start
       "
     >
       <div className="fixed top-4 left-4 z-10">
-        <a href="https://github.com/Aabhaskhandelwal">
+        <a href="https://github.com/AabhasK" aria-label="GitHub profile">
           <img
             src="/me.jpg"
             alt="Profile photo"
-            className="pointer-events-none w-10 h-10 rounded-full grayscale hover:grayscale-0 transition"
+            className="pointer-events-none size-10 rounded-full grayscale hover:grayscale-0"
           />
         </a>
       </div>
 
-      {/* Smaller heading */}
-      <h2 className="text-lg font-semibold mb-5 text-[#ededed] text-left">
-        AI Glossary
-      </h2>
-
-      {/* Smaller list */}
-      <div className="flex flex-col gap-[2px] text-left w-full">
-        {items.map((label) => {
-          const id = label.replace(/\s+/g, "-").toLowerCase();
-
-          return (
-            <button
-              key={label}
-              onClick={() => handleById(id)}
-              className="
-                text-[#ededed]
-                hover:text-[#b5b5b5]
-                text-xs
-                text-left
-                w-full
-              "
-              style={{
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-                fontSize: "0.7rem", // smaller
-                lineHeight: "1.05rem", // tighter
-                padding: "1px 0", // smaller spacing
-                transition: "color 0.15s ease",
-              }}
-            >
-              {label}
-            </button>
-          );
-        })}
-      </div>
+      <nav aria-label="Glossary terms" className="flex max-w-[220px] flex-col gap-6">
+        {glossary.map((group) => (
+          <div key={group.title}>
+            <h3 className="mb-2 font-display text-[0.8rem] font-semibold text-muted">
+              {group.title}
+            </h3>
+            <ul className="flex flex-col border-l border-line">
+              {group.terms.map((term) => (
+                <li key={term.id}>
+                  <a
+                    href={`#${term.id}`}
+                    className="-ml-px block border-l border-transparent py-[3px] pl-3 text-[0.75rem] text-faint hover:border-accent hover:text-text"
+                  >
+                    {term.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </nav>
     </aside>
   );
 }

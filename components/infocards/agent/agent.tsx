@@ -48,19 +48,21 @@ export default function Agent() {
       "
     >
       <section id="agent" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">Agent</h2>
+        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">Agent</h2>
 
-        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
-          Agents are autonomous systems that use tools and feedback loops to
-          accomplish tasks.
+        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
+          A model running in a loop: it looks at the situation, decides what
+          to do, calls a tool, checks the result and repeats until the goal is
+          done. Unlike a workflow, the model chooses its own next step. Today&apos;s
+          coding agents can work unattended for hours on one task.
         </p>
 
         <div
           className="
-            border border-[#2a2a2a]
+            border border-[#262d3d]
             rounded-xl p-6
             w-full
-            bg-[#161616]
+            bg-[#141925]
             flex flex-col items-center gap-6
             min-h-[180px]
           "
@@ -76,8 +78,8 @@ export default function Agent() {
                 }}
                 className={`px-4 py-1.5 rounded-lg border text-xs transition-all duration-300 ${
                   active === i
-                    ? "border-[#ededed] text-[#ededed] bg-[#212121]"
-                    : "border-[#252525] text-[#444] hover:text-[#777]"
+                    ? "border-[#e6e9f2] text-[#e6e9f2] bg-[#1d2433]"
+                    : "border-[#232a39] text-[#4a5367] hover:text-[#7a8397]"
                 }`}
               >
                 {p.name}
@@ -94,7 +96,7 @@ export default function Agent() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.18 }}
-                className="text-sm text-[#cfcfcf] text-center max-w-sm leading-relaxed"
+                className="text-sm text-[#c3c9d6] text-center max-w-sm leading-relaxed"
               >
                 {phases[active].desc}
               </motion.p>
@@ -107,7 +109,7 @@ export default function Agent() {
               <div
                 key={i}
                 className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                  i === active ? "bg-[#ededed]" : "bg-[#2e2e2e]"
+                  i === active ? "bg-[#e6e9f2]" : "bg-[#2c3446]"
                 }`}
               />
             ))}
@@ -116,16 +118,16 @@ export default function Agent() {
           {/* Play / Pause */}
           <button
             onClick={() => setPlaying((p) => !p)}
-            className="bg-white text-[#2a2a2a] text-sm px-4 py-1 rounded-md hover:bg-neutral-300 transition"
+            className="bg-white text-[#262d3d] text-sm px-4 py-1 rounded-md hover:bg-neutral-300 transition"
           >
             {playing ? "Pause" : "Play"}
           </button>
         </div>
 
-        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
           They choose their own actions to get things done.
         </p>
-        <div className="text-[#b5b5b5] text-xs text-center">
+        <div className="text-[#98a1b6] text-xs text-center">
           <a
             href="https://www.ibm.com/think/topics/ai-agents"
             className="underline"

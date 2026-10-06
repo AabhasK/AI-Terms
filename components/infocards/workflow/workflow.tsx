@@ -26,11 +26,11 @@ export default function Workflow() {
       "
     >
       <section id="workflow" className="mb-14">
-        <h2 className="text-base font-semibold text-[#ededed] mb-2">
+        <h2 className="text-base font-semibold text-[#e6e9f2] mb-2">
           Workflow
         </h2>
 
-        <p className="text-[#cfcfcf] text-sm leading-relaxed mb-6">
+        <p className="text-[#c3c9d6] text-sm leading-relaxed mb-6">
           A predefined sequence of steps where each stage uses the previous
           result to move the task forward toward a final outcome.
         </p>
@@ -38,11 +38,11 @@ export default function Workflow() {
         {/* ANIMATED TOKENIZATION CARD */}
         <div
           className="
-            border border-[#2a2a2a]
+            border border-[#262d3d]
             rounded-xl
             p-6
             w-full
-            bg-[#161616]
+            bg-[#141925]
             flex flex-col items-center justify-center
             gap-4
             min-h-[180px] sm:min-h-[160px] min-h-[140px]
@@ -60,7 +60,7 @@ export default function Workflow() {
           ></video>
         </div>
 
-        <p className="text-center text-[#b5b5b5] text-xs mt-4 leading-relaxed">
+        <p className="text-center text-[#98a1b6] text-xs mt-4 leading-relaxed">
           Connects steps into a clear, predictable path.
         </p>
       </section>
