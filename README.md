@@ -8,12 +8,13 @@ An interactive minimalistic web application designed to provide clear and concis
 - **Visual Explanations:** Each term is explained with text, images, and even video clips for better understanding.
 - **Modern UI:** A clean and easy-to-navigate interface.
 - **Responsive Design:** Works on all devices.
+- **Models page:** live specs from the Vercel AI Gateway catalog,with AI comparison.
 
 ## Screenshots
 
-![Home Page](./public/screenshot1.png)
+![Home Page](./public/glossarypage.png)
 
-![Term Explanation](./public/screenshot2.png)
+![Term Explanation](./public/modelspage.png)
 
 ## Technologies Used
 
@@ -21,6 +22,7 @@ An interactive minimalistic web application designed to provide clear and concis
 - [React](https://reactjs.org/) - UI Library
 - [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
 - [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
+- [Framer Motion](https://motion.dev/) - for animation on some terms
 
 ## Getting Started
 
