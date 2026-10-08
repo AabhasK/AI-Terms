@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CompareTool from "@/components/models/CompareTool";
-import { featured, getCatalog, type ModelInfo } from "@/lib/models";
+import { featuredGroups, getCatalog, type ModelInfo } from "@/lib/models";
 import { formatMonth, formatPrice, formatTokens } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -11,6 +12,43 @@ export const metadata: Metadata = {
 // Re-fetch the model catalog at most once an hour.
 export const revalidate = 3600;
 
+type Row = ModelInfo & { note: string };
+
+function ModelCard({ m }: { m: Row }) {
+  return (
+    <article className="flex flex-col rounded-xl border border-line bg-panel p-5">
+      <h3 className="font-medium text-text">{m.name}</h3>
+      <p className="mt-0.5 text-xs text-faint">
+        {m.provider} · released {formatMonth(m.released)}
+      </p>
+      <p className="mt-3 text-sm leading-relaxed text-muted text-pretty">{m.note}</p>
+
+      <dl className="mt-4 grid grid-cols-3 gap-3 border-t border-line pt-4 text-xs">
+        <div>
+          <dt className="text-faint">Context</dt>
+          <dd className="mt-0.5 text-text tabular-nums">{formatTokens(m.context)}</dd>
+        </div>
+        <div>
+          <dt className="text-faint">Input / 1M</dt>
+          <dd className="mt-0.5 text-text tabular-nums">{formatPrice(m.inputPrice)}</dd>
+        </div>
+        <div>
+          <dt className="text-faint">Output / 1M</dt>
+          <dd className="mt-0.5 text-text tabular-nums">{formatPrice(m.outputPrice)}</dd>
+        </div>
+      </dl>
+
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {m.inputs.map((input) => (
+          <span key={input} className="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">
+            {input}
+          </span>
+        ))}
+      </div>
+    </article>
+  );
+}
+
 export default async function ModelsPage() {
   let catalog: ModelInfo[] = [];
   try {
@@ -19,70 +57,91 @@ export default async function ModelsPage() {
     console.error(err);
   }
 
-  const rows = featured
-    .map((f) => {
-      const model = catalog.find((m) => m.id === f.id);
-      return model ? { ...model, note: f.note } : null;
-    })
-    .filter((row) => row !== null);
+  // Attach live catalog data to each hand-picked model. Models missing from
+  // the catalog are skipped.
+  const groups = featuredGroups.map((group) => ({
+    ...group,
+    rows: group.models
+      .map((f) => {
+        const model = catalog.find((m) => m.id === f.id);
+        return model ? { ...model, note: f.note } : null;
+      })
+      .filter((row) => row !== null),
+  }));
+  const all = groups.flatMap((g) => g.rows);
 
-  return (
-    <main className="mx-auto max-w-4xl px-4 pt-28 pb-28 sm:px-8">
-      <h1 className="font-display text-4xl font-semibold text-text text-balance sm:text-5xl">
-        Models
-      </h1>
-      <p className="mt-4 max-w-[58ch] text-[0.95rem] leading-relaxed text-muted text-pretty">
-        What makes the newest AI models different. Prices and context windows
-        come live from the Vercel AI Gateway model catalog.
-      </p>
-
-      {rows.length === 0 ? (
+  if (all.length === 0) {
+    return (
+      <main className="mx-auto max-w-5xl px-4 pt-28 pb-28 sm:px-8">
+        <h1 className="font-display text-4xl font-semibold text-text sm:text-5xl">Models</h1>
         <p className="mt-12 rounded-xl border border-line bg-panel p-6 text-sm text-muted">
           The model catalog couldn&apos;t be loaded. Refresh the page to try again.
         </p>
-      ) : (
-        <>
-          <div className="mt-12 overflow-x-auto">
-            <table className="w-full min-w-[640px] text-left text-sm">
-              <thead>
-                <tr className="border-b border-line text-xs text-faint">
-                  <th className="py-2 pr-4 font-normal">Model</th>
-                  <th className="py-2 pr-4 font-normal">Context</th>
-                  <th className="py-2 font-normal">Price per 1M tokens (in / out)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((m) => (
-                  <tr key={m.id} className="border-b border-line align-top">
-                    <td className="py-4 pr-4">
-                      <div className="font-medium text-text">{m.name}</div>
-                      <div className="mt-0.5 text-xs text-faint">
-                        {m.provider} · {formatMonth(m.released)}
-                      </div>
-                      <p className="mt-1.5 max-w-[52ch] text-xs leading-relaxed text-muted text-pretty">
-                        {m.note}
-                      </p>
-                    </td>
-                    <td className="py-4 pr-4 text-text tabular-nums">{formatTokens(m.context)}</td>
-                    <td className="py-4 text-text tabular-nums">
-                      {formatPrice(m.inputPrice)} / {formatPrice(m.outputPrice)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+      </main>
+    );
+  }
 
-          <h2 className="mt-20 font-display text-2xl font-semibold text-text">
-            Compare two models
-          </h2>
-          <p className="mt-2 mb-6 max-w-[58ch] text-sm leading-relaxed text-muted text-pretty">
-            Pick two models and an AI will explain the difference, using only
-            the specs from the catalog.
+  // Quick answers, worked out from the live data.
+  const cheapest = all.reduce((x, y) => ((y.outputPrice ?? Infinity) < (x.outputPrice ?? Infinity) ? y : x));
+  const biggest = all.reduce((x, y) => ((y.context ?? 0) > (x.context ?? 0) ? y : x));
+  const newest = all.reduce((x, y) => ((y.released ?? "") > (x.released ?? "") ? y : x));
+
+  const quick = [
+    { label: "Cheapest output", model: cheapest, value: `${formatPrice(cheapest.outputPrice)} per 1M tokens` },
+    { label: "Largest context", model: biggest, value: `${formatTokens(biggest.context)} tokens` },
+    { label: "Newest", model: newest, value: `released ${formatMonth(newest.released)}` },
+  ];
+
+  return (
+    <main className="mx-auto max-w-5xl px-4 pt-28 pb-28 sm:px-8">
+      <h1 className="font-display text-4xl font-semibold text-text text-balance sm:text-5xl">
+        Models
+      </h1>
+      <p className="mt-4 max-w-[60ch] text-[0.95rem] leading-relaxed text-muted text-pretty">
+        What makes the newest AI models different. Prices and context windows
+        come live from the Vercel AI Gateway model catalog. Not sure what a{" "}
+        <Link href="/#context-window" className="text-text underline hover:text-muted">
+          context window
+        </Link>{" "}
+        or a{" "}
+        <Link href="/#token" className="text-text underline hover:text-muted">
+          token
+        </Link>{" "}
+        is? The glossary explains both.
+      </p>
+
+      <div className="mt-10 grid gap-3 sm:grid-cols-3">
+        {quick.map((q) => (
+          <div key={q.label} className="rounded-xl border border-line bg-panel p-5">
+            <p className="text-xs text-faint">{q.label}</p>
+            <p className="mt-2 font-medium text-text">{q.model.name}</p>
+            <p className="mt-0.5 text-xs text-muted tabular-nums">{q.value}</p>
+          </div>
+        ))}
+      </div>
+
+      {groups.map((group) => (
+        <section key={group.title} className="mt-16">
+          <h2 className="font-display text-2xl font-semibold text-text">{group.title}</h2>
+          <p className="mt-2 mb-6 max-w-[60ch] text-sm leading-relaxed text-muted text-pretty">
+            {group.intro}
           </p>
-          <CompareTool models={rows} />
-        </>
-      )}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {group.rows.map((m) => (
+              <ModelCard key={m.id} m={m} />
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <section className="mt-20">
+        <h2 className="font-display text-2xl font-semibold text-text">Compare two models</h2>
+        <p className="mt-2 mb-6 max-w-[60ch] text-sm leading-relaxed text-muted text-pretty">
+          Pick any two models above and an AI will explain the difference, using
+          only the specs from the catalog.
+        </p>
+        <CompareTool models={all} />
+      </section>
     </main>
   );
 }
