@@ -2,6 +2,17 @@
 
 import { useState } from "react";
 import type { ModelInfo } from "@/lib/models";
+import { formatMonth, formatPrice, formatTokens } from "@/lib/format";
+
+// Spec rows shown side by side. Each row turns a model into display text.
+const specs: { label: string; show: (m: ModelInfo) => string }[] = [
+  { label: "Maker", show: (m) => m.provider },
+  { label: "Released", show: (m) => formatMonth(m.released) },
+  { label: "Context", show: (m) => formatTokens(m.context) },
+  { label: "Input / 1M", show: (m) => formatPrice(m.inputPrice) },
+  { label: "Output / 1M", show: (m) => formatPrice(m.outputPrice) },
+  { label: "Reads", show: (m) => m.inputs.join(", ") },
+];
 
 export default function CompareTool({ models }: { models: ModelInfo[] }) {
   const [a, setA] = useState(models[0].id);
@@ -9,6 +20,18 @@ export default function CompareTool({ models }: { models: ModelInfo[] }) {
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const modelA = models.find((m) => m.id === a)!;
+  const modelB = models.find((m) => m.id === b)!;
+
+  // A new pick makes the old AI answer stale, so clear it.
+  function pick(setter: (id: string) => void) {
+    return (id: string) => {
+      setter(id);
+      setAnswer("");
+      setError("");
+    };
+  }
 
   async function explain() {
     setLoading(true);
@@ -31,42 +54,59 @@ export default function CompareTool({ models }: { models: ModelInfo[] }) {
     setLoading(false);
   }
 
-  const select = (value: string, onChange: (v: string) => void, label: string) => (
-    <label className="flex flex-1 flex-col gap-1.5 text-xs text-faint">
-      {label}
-      <select
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="rounded-lg border border-line bg-panel-2 px-3 py-2 text-sm text-text"
-      >
-        {models.map((m) => (
-          <option key={m.id} value={m.id}>
-            {m.name}
-          </option>
-        ))}
-      </select>
-    </label>
+  const select = (value: string, onChange: (id: string) => void, label: string) => (
+    <select
+      aria-label={label}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="w-full min-w-0 rounded-lg border border-line bg-panel-2 px-2 py-1.5 text-xs text-text"
+    >
+      {models.map((m) => (
+        <option key={m.id} value={m.id}>
+          {m.name}
+        </option>
+      ))}
+    </select>
   );
 
   return (
-    <div className="rounded-xl border border-line bg-panel p-5 sm:p-6">
-      <div className="flex flex-col gap-3 sm:flex-row">
-        {select(a, setA, "Model A")}
-        {select(b, setB, "Model B")}
+    <div className="rounded-xl border border-line bg-panel p-4">
+      <h2 className="font-display text-lg font-semibold text-text">Compare</h2>
+
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        {select(a, pick(setA), "Model A")}
+        {select(b, pick(setB), "Model B")}
       </div>
+
+      <table className="mt-3 w-full table-fixed text-xs">
+        <tbody>
+          {specs.map((row) => {
+            const valueA = row.show(modelA);
+            const valueB = row.show(modelB);
+            const differs = valueA !== valueB;
+            return (
+              <tr key={row.label} className="border-b border-line last:border-0">
+                <th className="w-[30%] py-1.5 pr-2 text-left font-normal text-faint">{row.label}</th>
+                <td className={`py-1.5 pr-2 tabular-nums ${differs ? "text-text" : "text-faint"}`}>{valueA}</td>
+                <td className={`py-1.5 tabular-nums ${differs ? "text-text" : "text-faint"}`}>{valueB}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <p className="mt-2 text-[11px] text-faint">Bright values are the ones that differ.</p>
 
       <button
         onClick={explain}
         disabled={a === b || loading}
-        className="mt-5 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-ink disabled:opacity-40"
+        className="mt-3 w-full rounded-lg bg-accent px-3 py-1.5 text-xs font-medium text-ink disabled:opacity-40"
       >
-        {loading ? "Explaining…" : "Explain the difference"}
+        {loading ? "Explaining…" : "Explain the difference with AI"}
       </button>
-      {a === b && <p className="mt-2 text-xs text-faint">Pick two different models.</p>}
 
-      {error && <p className="mt-4 text-sm text-[#f4a37d]">{error}</p>}
+      {error && <p className="mt-3 text-xs text-[#f4a37d]">{error}</p>}
       {answer && (
-        <p className="mt-5 whitespace-pre-line border-l-2 border-accent pl-4 text-sm leading-relaxed text-[#cfcfcf] text-pretty">
+        <p className="mt-3 border-l-2 border-accent pl-3 text-xs leading-relaxed text-[#cfcfcf] text-pretty">
           {answer}
         </p>
       )}

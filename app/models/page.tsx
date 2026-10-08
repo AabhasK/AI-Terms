@@ -93,7 +93,7 @@ export default async function ModelsPage() {
   ];
 
   return (
-    <main className="mx-auto max-w-5xl px-4 pt-28 pb-28 sm:px-8">
+    <main className="mx-auto max-w-6xl px-4 pt-28 pb-28 sm:px-8">
       <h1 className="font-display text-4xl font-semibold text-text text-balance sm:text-5xl">
         Models
       </h1>
@@ -120,28 +120,28 @@ export default async function ModelsPage() {
         ))}
       </div>
 
-      {groups.map((group) => (
-        <section key={group.title} className="mt-16">
-          <h2 className="font-display text-2xl font-semibold text-text">{group.title}</h2>
-          <p className="mt-2 mb-6 max-w-[60ch] text-sm leading-relaxed text-muted text-pretty">
-            {group.intro}
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {group.rows.map((m) => (
-              <ModelCard key={m.id} m={m} />
-            ))}
-          </div>
-        </section>
-      ))}
+      {/* Cards on the left, compare panel stuck to the right while scrolling. */}
+      <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div>
+          {groups.map((group) => (
+            <section key={group.title} className="mt-10">
+              <h2 className="font-display text-2xl font-semibold text-text">{group.title}</h2>
+              <p className="mt-2 mb-6 max-w-[60ch] text-sm leading-relaxed text-muted text-pretty">
+                {group.intro}
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {group.rows.map((m) => (
+                  <ModelCard key={m.id} m={m} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
 
-      <section className="mt-20">
-        <h2 className="font-display text-2xl font-semibold text-text">Compare two models</h2>
-        <p className="mt-2 mb-6 max-w-[60ch] text-sm leading-relaxed text-muted text-pretty">
-          Pick any two models above and an AI will explain the difference, using
-          only the specs from the catalog.
-        </p>
-        <CompareTool models={all} />
-      </section>
+        <aside className="lg:sticky lg:top-24 lg:mt-10 lg:self-start">
+          <CompareTool models={all} />
+        </aside>
+      </div>
     </main>
   );
 }
