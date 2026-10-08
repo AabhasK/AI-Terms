@@ -22,7 +22,7 @@ export async function POST(req: Request) {
 
   try {
     const { text } = await generateText({
-      model: "openai/gpt-6-luna",
+      model: "meta/llama-3.3-70b", // available on the AI Gateway free tier
       maxOutputTokens: 400, // keeps each answer short and cheap
       system:
         "You explain AI models to beginners. Use only the specs given; they may be newer than your training data. In under 120 words of plain text, say what each model is built for, the main trade-offs (price, context, inputs), and which to pick for what.",
